@@ -1,10 +1,11 @@
-# Laravel & Vue SPA Starter Kit
+# Laravel 11 & Vue 3 SPA Starter Kit
 [![](https://img.shields.io/badge/Vue-v3.4-04C690?style=flat)](https://vuejs.org/)
 [![](https://img.shields.io/badge/Laravel-v11-ff2e21?style=flat)](https://laravel.com)
 
 ## Technology
-- PHP-FPM 8.1
+- PHP-FPM 8.3
 - Laravel 11
+- Node 20.16
 - Vue, Vuex
 - Docker & Docker Compose
 - Nginx
