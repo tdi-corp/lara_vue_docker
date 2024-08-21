@@ -19,18 +19,30 @@
 4) **mysql**: main database connection
 
 ## Installation
-### Development Environment
 it includes compiling and hot-reloading for development
+
+### 1. Copy .env.dev
 ```
 cp api/.env.dev.example api/.env.dev
+```
 
-// then =>
+### 2. Laravel Permission folder
+PROJECT_FOLDER - example: /var/www/my_project
+```
+sudo chown -R $USER:$USER /PROJECT_FOLDER
 
+sudo find /PROJECT_FOLDER -type f -exec chmod 644 {} \;  
+sudo find /PROJECT_FOLDER -type d -exec chmod 755 {} \;
+
+sudo chgrp -R /PROJECT_FOLDER/storage /PROJECT_FOLDER/bootstrap/cache
+sudo chmod -R ug+rwx /PROJECT_FOLDER/storage /PROJECT_FOLDER/bootstrap/cache
+```
+### 3. Docker build & up project
+```
 docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build
-
-// then =>
-
-// run the migrations
+```
+### 4. run the migrations
+```
 docker exec -it spa-dev-api-1 php artisan migrate --seed
 ```
 - To access the api open http://localhost:8000
