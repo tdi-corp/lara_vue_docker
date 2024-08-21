@@ -34,8 +34,7 @@ sudo chown -R $USER:$USER API_PATH
 sudo find API_PATH -type f -exec chmod 644 {} \;  
 sudo find API_PATH -type d -exec chmod 755 {} \;
 
-sudo chgrp -R API_PATH/storage API_PATH/bootstrap/cache
-sudo chmod -R ug+rwx API_PATH/storage API_PATH/bootstrap/cache
+sudo chmod -R 777 API_PATH/storage API_PATH/bootstrap/cache
 ```
 ### 3. Docker build & up project
 ```
